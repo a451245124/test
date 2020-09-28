@@ -55,7 +55,8 @@ xhr.onload = function(){
   // L.marker().addTo(map)
   //   )
  }
- map.addLayer(markers);
+ markers.remove();
+ //map.addLayer(markers);
 }
 
 //food
@@ -70,7 +71,8 @@ xhr3.onload = function(){
   markerf.addLayer(L.marker([data[i].Py,data[i].Px], {icon: redIcon}).bindPopup(data[i].Name));
 
  }
- map.addLayer(markerf);
+ markerf.remove();
+ //map.addLayer(markerf);
 }
 
 /*
