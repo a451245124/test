@@ -93,14 +93,14 @@ xhr2.onload = function () {
 */
 
 
-function aa() {
+function food() {
   var v = document.getElementById("Btnfood").id;
   //history.back() 回上一頁
   map.removeLayer(markers)
   map.addLayer(markerf)
   
 }
-function bb() {
+function travel() {
   var v = document.getElementById("Btnfood").id;
   //history.back() 回上一頁
   map.removeLayer(markerf)
