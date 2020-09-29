@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>北區勁好玩!</title>
   <link rel="stylesheet" href="./style.css">
-
 </head>
+
 <body>
 <!-- partial:index.partial.html -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
@@ -13,15 +13,12 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css"></link> 
 
 
-
-
-  <input type ="button" id="Btnfood" onclick="food()" value="美食"></input>
-  <input type ="button" id="Btntravel"onclick="travel()" value="旅遊"></input>
-
-
-<div id="map"></div>
-
-
+<div id="map">
+  <div class="leaflet-top leaflet-right">
+    <input type ="button" value="旅遊" id="Btntravel" onclick="travelClick()"></input>  
+    <input type ="button" value="美食" id="Btnfood" onclick="foodClick()"></input>
+  </div>
+</div>
 
 
 

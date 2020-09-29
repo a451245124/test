@@ -1,10 +1,14 @@
 var map = L.map('map', {
     center: [25.044955,121.335579],
     zoom: 10
+    
 });
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+
+map.doubleClickZoom.disable(); //取消doubleclick放大map
+
 
 //green 旅遊
 var greenIcon = new L.Icon({
@@ -26,6 +30,7 @@ var redIcon = new L.Icon({
   shadowSize: [41, 41]
 });
 
+/*
 // black pharmacy
 var blackIcon = new L.Icon({
   iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
@@ -35,7 +40,7 @@ var blackIcon = new L.Icon({
   popupAnchor: [1, -34],
   shadowSize: [41, 41]
 });
-
+*/
 
 
 
@@ -93,16 +98,35 @@ xhr2.onload = function () {
 */
 
 
-function food() {
-  var v = document.getElementById("Btnfood").id;
+function travelClick() {
+  //  var v = document.getElementById("Btntravel");
+    //history.back() 回上一頁
+    if(this.id =='Btntravel')
+    {
+      map.addLayer(markers);
+      this.id ='aa';
+    }
+    else
+    {
+      this.id ='Btntravel'
+      map.removeLayer(markers);
+    }
+  }
+
+function foodClick() {
+//  var v = document.getElementById("Btnfood");
   //history.back() 回上一頁
-  map.removeLayer(markers)
-  map.addLayer(markerf)
   
-}
-function travel() {
-  var v = document.getElementById("Btnfood").id;
-  //history.back() 回上一頁
-  map.removeLayer(markerf)
-  map.addLayer(markers)
-}
+  if(this.value =='美食')
+  {
+    map.addLayer(markerf);
+    this.value ='close';
+  }
+  else
+  {
+    this.value ='美食'
+    map.removeLayer(markerf);
+  }
+
+} 
+
